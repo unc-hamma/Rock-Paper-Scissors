@@ -39,10 +39,25 @@ function playRound(humanChoice, computerChoice){
     else console.log("It's a tie! You both chose the same");
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+// const humanSelection = getHumanChoice();
+// const computerSelection = getComputerChoice();
 
-// console,log(humanSelection);
-console.log(computerSelection);
+// console.log(computerSelection);
 
-playRound(humanSelection,computerSelection);
+// playRound(humanSelection,computerSelection);
+
+function playGame(){
+    
+    sapienScore = 0;
+    computerScore = 0;
+    
+    for(let i = 0; i < 5; i++) playRound(getHumanChoice(), getComputerChoice());
+
+    if(sapienScore > computerScore) console.log("Hooray! You win!");
+    
+    else if (sapienScore < computerScore) console.log("Nooo! Ape lost :(");
+
+    else console.log("Not bad for a monkey ;)");
+}
+
+playGame();
